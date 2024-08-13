@@ -74,7 +74,7 @@
     </include>
 
     <!-- launch-prefix="xterm -e gdb (add [- - args] without space) -->
-    <node name="stereo_inertial_publisher" pkg="depthai_examples" type="stereo_inertial_node" output="screen" required="true">
+    <node name="oak" pkg="depthai_examples" type="stereo_inertial_node" output="screen" required="true">
         <param name="mxId"                  value="$(arg mxId)"/>
         <param name="usb2Mode"              value="$(arg usb2Mode)"/>
         <param name="poeMode"               value="$(arg poeMode)"/>
@@ -119,7 +119,7 @@
         <param name="enableRosBaseTimeUpdate" value="$(arg enableRosBaseTimeUpdate)" />
     </node>            
 
-    <node pkg="nodelet" type="nodelet" name="nodelet_manager"  args="manager" output="screen"/>
+    <!-- <node pkg="nodelet" type="nodelet" name="nodelet_manager"  args="manager" output="screen"/>
 
     <node pkg="nodelet" type="nodelet" name="depth_image_convertion_nodelet"
         args="load depth_image_proc/convert_metric nodelet_manager">
@@ -155,7 +155,7 @@
   <group if="$(eval arg('enableRviz') == true)">
     <node if="$(eval arg('depth_aligned') == true)" type="rviz" name="rviz" pkg="rviz" args="-d $(find depthai_examples)/rviz/stereoInertialDepthAlign.rviz" />
     <node if="$(eval arg('depth_aligned') == false)" type="rviz" name="rviz" pkg="rviz" args="-d $(find depthai_examples)/rviz/stereoInertialROS1.rviz" />
-  </group>
+  </group> -->
 
 </launch>
 
