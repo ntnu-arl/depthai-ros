@@ -143,6 +143,10 @@ std::tuple<dai::Pipeline, int, int> createPipeline(bool enableDepth,
             rgbResolution = dai::node::ColorCamera::Properties::SensorResolution::THE_13_MP;
             rgbWidth = 4208;
             rgbHeight = 3120;
+        } else if(rgbResolutionStr == "720p") {
+            rgbResolution = dai::node::ColorCamera::Properties::SensorResolution::THE_720_P;
+            stereoWidth = 1280;
+            stereoHeight = 720;
         } else {
             ROS_ERROR("Invalid parameter. -> rgbResolution: %s", rgbResolutionStr.c_str());
             throw std::runtime_error("Invalid color camera resolution.");
